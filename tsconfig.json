@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "module": "es6",
+    "jsx": "react",
+    "target": "es5",
+    "lib": ["DOM", "ES5", "ScriptHost", "es2019"],
+    "suppressImplicitAnyIndexErrors": true,
+    "allowJs": true,
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+        "app/*": ["app/*"],
+        "assets/*": ["assets/*"],
+        "hooks/*": ["hooks/*"],
+        "components/*": ["components/*"],
+        "services/*": ["services/*"],
+        "uiLibrary/*": ["uiLibrary/*"],
+        "utils/*": ["utils/*"],
+        "modules/*": ["modules/*"]
+      },
+  },
+  "include": ["src/","src/custom.d.ts"],
+  "exclude": ["node_modules", "config", "scripts"]
+}

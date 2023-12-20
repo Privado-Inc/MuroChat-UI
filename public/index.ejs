@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="theme-color" content="#000000" />
+        <title>MuroChat</title>
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:regular,bold,medium,italic" rel="stylesheet" />
+        <%= envScript %>
+        <style>
+            body {
+                font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                background-color: #f4f7f8;
+                padding: 0;
+                min-height: 100vh;
+            }
+            @keyframes loading{
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="body"></div>
+        <div id="notification"></div>
+        <div id="dialog"></div>
+        <div id="floatingPane"></div>
+        <div id="holder"></div>
+    </body>
+</html>
