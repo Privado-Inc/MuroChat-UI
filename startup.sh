@@ -16,6 +16,7 @@ cp /home/env.js /home/private-gpt-ui/build/env.js
 
 cp /etc/nginx/sites-enabled/frontend.conf /home/frontend.conf
 sed -i -e "s#__DOMAIN__NAME__#$DOMAIN_NAME#g" /home/frontend.conf
+sed -i -e "s#__LB_DNS_NAME__#$LB_DNS_NAME#g" /home/frontend.conf
 
 cp /home/frontend.conf /etc/nginx/sites-enabled/frontend.conf
 cp /home/frontend.conf /etc/nginx/sites-available/frontend.conf
@@ -24,6 +25,7 @@ cp /home/frontend.conf /etc/nginx/http.d/frontend.conf
 apk update && apk add bash curl nginx openrc
 openrc ; touch /run/openrc/softlevel && echo 'rc_provide="loopback net"' >> /etc/rc.conf
 
+rm -rf /etc/nginx/http.d/default.conf
 # start nginx
 service nginx start
 
