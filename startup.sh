@@ -29,5 +29,5 @@ rm -rf /etc/nginx/http.d/default.conf
 # start nginx
 service nginx start
 
-echo "private-gpt-ui is up and running..."
+echo "Muro Chat up and running..."
 tail -f /dev/null
