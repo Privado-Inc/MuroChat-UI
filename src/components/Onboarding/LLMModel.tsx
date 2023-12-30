@@ -178,9 +178,9 @@ const getDefaultModelLabel = (model: ModelData, index: number) =>
     `Model 0${index + 1} | ${model.modelType[0].label} | ${model.modelVersion[0].label}`;
 
 export default ({
-    updateCompletionState = () => { },
-    goNext = () => { },
-    goPrevious = () => { },
+    updateCompletionState = () => {},
+    goNext = () => {},
+    goPrevious = () => {},
     hideFooter = false
 }: {
     hideFooter?: boolean;
@@ -435,7 +435,7 @@ export default ({
                                         }
                                         if (
                                             store.state[editModel as number].modelType[0].key ===
-                                            availableModels[0].key &&
+                                                availableModels[0].key &&
                                             !store.state[editModel as number].modelVersion.length
                                         ) {
                                             Notification.createNotification({
@@ -447,7 +447,7 @@ export default ({
 
                                         if (
                                             store.state[editModel as number].modelType[0].key ===
-                                            availableModels[1].key &&
+                                                availableModels[1].key &&
                                             !store.state[editModel as number].apiURL.startsWith("http")
                                         ) {
                                             Notification.createNotification({

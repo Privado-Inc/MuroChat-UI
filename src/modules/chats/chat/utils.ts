@@ -1,4 +1,4 @@
-import escapeStringRegexp from 'escape-string-regexp';
+import escapeStringRegexp from "escape-string-regexp";
 
 export const getMaskedHtmlMessage = (
     { message, piiToEntityMapData, isUser, noHighlight = false }:

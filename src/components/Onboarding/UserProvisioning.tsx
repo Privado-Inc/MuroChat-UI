@@ -199,9 +199,9 @@ const createOrUpdate = async (data: Record<UserRole, string[]>) => {
 };
 
 export default ({
-    updateCompletionState = () => { },
-    goNext = () => { },
-    goPrevious = () => { },
+    updateCompletionState = () => {},
+    goNext = () => {},
+    goPrevious = () => {},
     hideFooter = false
 }: {
     hideFooter?: boolean;

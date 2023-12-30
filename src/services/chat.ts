@@ -186,8 +186,8 @@ export const getChats = async (groups: boolean, showWhat = ""): Promise<Response
         {
             queryParams: groups
                 ? {
-                    groups: "True"
-                }
+                      groups: "True"
+                  }
                 : {}
         }
     );
@@ -257,8 +257,8 @@ export const getChatsByGroup = async (groups: boolean): Promise<Response<ChatsBy
         {
             queryParams: groups
                 ? {
-                    groups: "True"
-                }
+                      groups: "True"
+                  }
                 : {}
         }
     );
@@ -360,8 +360,14 @@ export const unPinChat = async (chatId: string): Promise<Response<{ message: str
     return response;
 };
 
-export const importChat = async (userChatSharingId: string, chatId: string): Promise<Response<{ message: string; chatId: string }>> => {
-    const response = await post<{ message: string; chatId: string }>(createEndpoint.importChat(userChatSharingId, chatId), {});
+export const importChat = async (
+    userChatSharingId: string,
+    chatId: string
+): Promise<Response<{ message: string; chatId: string }>> => {
+    const response = await post<{ message: string; chatId: string }>(
+        createEndpoint.importChat(userChatSharingId, chatId),
+        {}
+    );
     return response;
 };
 

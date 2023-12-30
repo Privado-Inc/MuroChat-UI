@@ -191,21 +191,21 @@ export const UserMessage = ({
             )}
             {piiToEntityMappedData?.length
                 ? piiToEntityMappedData.map((item) => (
-                    <Tooltip
-                        delayShow={200}
-                        id={`tooltip-${item.key}`}
-                        key={`tooltip-${item.key}`}
-                        place={"top-start" as any}
-                    >
-                        <TooltipContent>
-                            <StyledLightning />
-                            <TooltipText>
-                                This data was redacted as <BoldText>[{item.label}]</BoldText> prior to its sharing
-                                with the LLM API.
-                            </TooltipText>
-                        </TooltipContent>
-                    </Tooltip>
-                ))
+                      <Tooltip
+                          delayShow={200}
+                          id={`tooltip-${item.key}`}
+                          key={`tooltip-${item.key}`}
+                          place={"top-start" as any}
+                      >
+                          <TooltipContent>
+                              <StyledLightning />
+                              <TooltipText>
+                                  This data was redacted as <BoldText>[{item.label}]</BoldText> prior to its sharing
+                                  with the LLM API.
+                              </TooltipText>
+                          </TooltipContent>
+                      </Tooltip>
+                  ))
                 : null}
         </MessageStyle>
     );
@@ -237,21 +237,21 @@ export const SystemMessage = ({
             </MessageContent>
             {piiToEntityMappedData?.length
                 ? piiToEntityMappedData.map((item) => (
-                    <Tooltip
-                        delayShow={200}
-                        id={`tooltip-${item.key}`}
-                        key={`tooltip-${item.key}`}
-                        place={"top-start" as any}
-                    >
-                        <TooltipContent>
-                            <StyledLightning />
-                            <TooltipText>
-                                This data was redacted as <BoldText>[{item.label}]</BoldText> prior to its sharing
-                                with the LLM API.
-                            </TooltipText>
-                        </TooltipContent>
-                    </Tooltip>
-                ))
+                      <Tooltip
+                          delayShow={200}
+                          id={`tooltip-${item.key}`}
+                          key={`tooltip-${item.key}`}
+                          place={"top-start" as any}
+                      >
+                          <TooltipContent>
+                              <StyledLightning />
+                              <TooltipText>
+                                  This data was redacted as <BoldText>[{item.label}]</BoldText> prior to its sharing
+                                  with the LLM API.
+                              </TooltipText>
+                          </TooltipContent>
+                      </Tooltip>
+                  ))
                 : null}
         </MessageStyle>
     );

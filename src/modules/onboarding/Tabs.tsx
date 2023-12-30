@@ -153,13 +153,13 @@ type StepSavedData = {
     step1: {
         completed: boolean;
         data:
-        | {
-            clientId: string;
-            clientSecret: string;
-            domain: string;
-            status: number;
-        }
-        | undefined;
+            | {
+                  clientId: string;
+                  clientSecret: string;
+                  domain: string;
+                  status: number;
+              }
+            | undefined;
         index: number;
     };
     step2: {
@@ -170,12 +170,12 @@ type StepSavedData = {
     step3: {
         completed: boolean;
         data:
-        | {
-            modelType: { key: string; label: string }[];
-            secretKey: string;
-            modelVersion: { key: string; label: string }[];
-        }[]
-        | undefined;
+            | {
+                  modelType: { key: string; label: string }[];
+                  secretKey: string;
+                  modelVersion: { key: string; label: string }[];
+              }[]
+            | undefined;
         index: number;
     };
     step4: {

@@ -58,8 +58,8 @@ const fetchConfigurationSaved = async (): Promise<Response<IdpData>> => getIDPCo
 const createOrUpdate = async (data: IdpData) => createIDPConfiguration(data);
 
 export default ({
-    updateCompletionState = () => { },
-    goNext = () => { },
+    updateCompletionState = () => {},
+    goNext = () => {},
     hideFooter = false
 }: {
     hideFooter?: boolean;
@@ -123,7 +123,7 @@ export default ({
                             label="Redirect URI"
                             valueType="text"
                             value={`${location.origin}/idp/okta`}
-                            onChange={(val) => { }}
+                            onChange={(val) => {}}
                             disabled
                         />
                         <BottonHolder>

@@ -49,7 +49,7 @@ const MessageInput = ({ isMessageLoading = false, onSend, value }: Props) => {
             textAreaBox.current.style.maxHeight = "500px";
             textAreaBox.current.style.height = "36px";
         }
-    }
+    };
 
     const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setState(e.target.value);
