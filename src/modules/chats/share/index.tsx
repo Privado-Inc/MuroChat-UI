@@ -42,7 +42,7 @@ const UserProfile = styled.span`
     justify-content: center;
 `;
 
-const ShareWithList = styled.div`
+const ShareList = styled.div`
     width: 56px;
     overflow: hidden;
     height: 20px;
@@ -209,18 +209,18 @@ export default () => {
                     {chatTitle}
                 </ChatListMessageLayout.MessageTitleWithShare>
                 {
-                    store.selectedChat?.sharedBy === id &&
+                    store.selectedChat &&
                     <>
-                        <ShareWithList id="sharedWithList">
-                            {store.selectedChat.sharedWithList}
-                        </ShareWithList>
+                        <ShareList id="sharedList">
+                            {store.selectedChat.sharedList}
+                        </ShareList>
                         <ReactTooltip
-                            anchorSelect="#sharedWithList"
+                            anchorSelect="#sharedList"
                             id={"tooltip-id"}
                             key={"tooltip-key"}
                             place={"bottom"}
                         >
-                            {store.selectedChat.sharedWithList}
+                            {store.selectedChat.sharedList}
                         </ReactTooltip>
                         <ChatListMessageLayout.ShareChatIcon />
                     </>

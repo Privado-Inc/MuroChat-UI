@@ -73,11 +73,18 @@ export default () => {
                 return undefined;
             }
 
+
+            response.data.chatIdsSharedWithUser.forEach(chat => {
+                const user = users.find(user => user.key === chat.sharedBy);
+                chat.sharedList = user ? user.label : chat.sharedBy;
+                return chat;
+            })
+
             response.data.chatIdsSharedByUser.forEach(chat => {
                 if (!chat.sharedWith.length) {
-                    chat.sharedWithList = "Everyone in the Organisation"
+                    chat.sharedList = "Everyone in the Organisation"
                 } else {
-                    chat.sharedWithList = chat.sharedWith.map(sharedWithId => {
+                    chat.sharedList = chat.sharedWith.map(sharedWithId => {
                         const user = users.find(user => user.key === sharedWithId);
                         return user ? user.label : sharedWithId;
                     }).join(", ")
