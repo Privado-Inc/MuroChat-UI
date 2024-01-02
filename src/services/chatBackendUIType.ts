@@ -65,7 +65,7 @@ export type SharedChatItem = {
     chatId: string;
     name: string;
     sharedWith: string[];
-    sharedWithList?: string;
+    sharedList?: string;
     shareId: string; // This is only for frontend
     chatMessages: ChatMessageResponse;
 };
