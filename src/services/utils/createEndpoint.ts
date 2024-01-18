@@ -14,5 +14,6 @@ export default {
     bookmarkMessage: (chatId: string, messageId: string) => `c/chats/${chatId}/message/${messageId}/bookmark`,
     pinChat: (chatId: string) => `c/chat/${chatId}/pin`,
     sharedChat: () => "c/chats/share",
+    stats: () => "c/stats",
     importChat: (userChatSharingId: string, chatId: string) => `c/chats/import/${userChatSharingId}/${chatId}`
 };

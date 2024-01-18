@@ -7,7 +7,6 @@ import SettingsPage from "./settingsPage";
 
 const Container = styled.div`
     display: flex;
-    width: 1336px;
     align-items: flex-start;
     flex: 1 0 0;
 `;
