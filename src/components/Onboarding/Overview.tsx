@@ -254,7 +254,7 @@ export default () => {
             } else {
                 Notification.createNotification({
                     type: "Error",
-                    subHeading: "Failed to UnPinned Chat"
+                    subHeading: "Failed to get Overview data"
                 });
             }
         }
