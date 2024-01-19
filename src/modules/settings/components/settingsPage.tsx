@@ -5,7 +5,7 @@ import UserProvisioningStep from "components/Onboarding/UserProvisioning";
 import SSOConfiguration from "components/Onboarding/SSOConfiguration";
 import ModelStep from "components/Onboarding/LLMModel";
 import { Colors, TextStyles } from "uiLibrary/index";
-
+import Overview from "components/Onboarding/Overview";
 
 const Container = styled.div`
     display: flex;
@@ -40,6 +40,7 @@ const Content = styled.div`
     align-items: flex-start;
     gap: 10px;
     width: 100%;
+    overflow-y: auto;
 `;
 
 export default ({
@@ -59,9 +60,7 @@ export default ({
                             </HeadingLabel>
                         </Heading>
                         <Content>
-                            <SSOConfiguration
-                                hideFooter
-                            />
+                            <Overview />
                         </Content>
                     </Container>
                 );
@@ -74,7 +73,7 @@ export default ({
                             </HeadingLabel>
                         </Heading>
                         <Content>
-                            <UserProvisioningStep
+                            <SSOConfiguration
                                 hideFooter
                             />
                         </Content>
@@ -86,6 +85,21 @@ export default ({
                         <Heading>
                             <HeadingLabel>
                                 {SettingItems[2].name}
+                            </HeadingLabel>
+                        </Heading>
+                        <Content>
+                            <UserProvisioningStep
+                                hideFooter
+                            />
+                        </Content>
+                    </Container>
+                );
+            case SettingItems[3].id:
+                return (
+                    <Container>
+                        <Heading>
+                            <HeadingLabel>
+                                {SettingItems[3].name}
                             </HeadingLabel>
                         </Heading>
                         <Content>

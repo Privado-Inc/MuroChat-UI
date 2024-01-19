@@ -5,6 +5,12 @@ import React from "react";
 
 export default [
     {
+        id: "step4",
+        name: "Overview",
+        icon: <SSOSetup />,
+        description: ""
+    },
+    {
         id: "step1",
         name: "Okta Set-up",
         icon: <SSOSetup />,

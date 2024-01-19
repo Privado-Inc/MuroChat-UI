@@ -65,7 +65,7 @@ export type SharedChatItem = {
     chatId: string;
     name: string;
     sharedWith: string[];
-    sharedWithList?: string;
+    sharedList?: string;
     shareId: string; // This is only for frontend
     chatMessages: ChatMessageResponse;
 };
@@ -73,4 +73,37 @@ export type SharedChatItem = {
 export type SharedChat = {
     chatIdsSharedByUser: SharedChatItem[];
     chatIdsSharedWithUser: SharedChatItem[];
+};
+
+export type StatisticalData = {
+    _id?: number,
+    userGroup?: string;
+    totalMessageCount: number;
+    totalPiiCount: number;
+    label?: string;
+    activeUsers?: number;
+    time: string;
+}
+
+export type BiMonthly = {
+    activeUsers: number;
+    activeUsersPercent: number;
+    piiCount: number;
+    piiCountPercent: number;
+    promptSent: number;
+    promptSentPercent: number;
+}
+
+export type TopRedactedSensitiveData = {
+    label: string;
+    value: number;
+    colour: string;
+}
+
+export type Stats = {
+    UsageAcrossUserGroups: StatisticalData[];
+    bimonthly: BiMonthly;
+    daily: StatisticalData[];
+    monthly: StatisticalData[];
+    topRedactedSensitiveData: TopRedactedSensitiveData[];
 };

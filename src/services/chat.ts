@@ -7,7 +7,8 @@ import {
     ChatsByGroups,
     MessageType,
     BookmarkMessageResponse,
-    SharedChat
+    SharedChat,
+    Stats
 } from "./chatBackendUIType";
 
 const parseStream = async (
@@ -186,8 +187,8 @@ export const getChats = async (groups: boolean, showWhat = ""): Promise<Response
         {
             queryParams: groups
                 ? {
-                      groups: "True"
-                  }
+                    groups: "True"
+                }
                 : {}
         }
     );
@@ -257,8 +258,8 @@ export const getChatsByGroup = async (groups: boolean): Promise<Response<ChatsBy
         {
             queryParams: groups
                 ? {
-                      groups: "True"
-                  }
+                    groups: "True"
+                }
                 : {}
         }
     );
@@ -357,6 +358,11 @@ export const deleteSharedChat = async (
 
 export const unPinChat = async (chatId: string): Promise<Response<{ message: string }>> => {
     const response = await remove<any>(createEndpoint.pinChat(chatId), {});
+    return response;
+};
+
+export const getStats = async (): Promise<Response<Stats>> => {
+    const response = await get<Stats>(createEndpoint.stats(), {});
     return response;
 };
 

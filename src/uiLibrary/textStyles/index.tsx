@@ -83,6 +83,9 @@ const HeadlineH600 = {
     `,
     HeadlineH600bold: css`
         ${generateStyle(14, 600, colors.neutral.p90, "normal", 18)}
+    `,
+    HeadlineH600boldLight: css`
+        ${generateStyle(14, 600, colors.neutral.p80, "normal", 20)}
     `
 };
 
@@ -156,6 +159,9 @@ const TextStyles = {
     `,
     ParagraphP200: css`
         ${generateStyle(14, 400, colors.neutral.p90, "normal", 22)}
+    `,
+    ParagraphP250: css`
+        ${generateStyle(14, 400, colors.neutral.p80, "normal", 20)}
     `,
     ParagraphP300: css`
         ${generateStyle(13, 400, colors.neutral.p70, "normal", 20)}
