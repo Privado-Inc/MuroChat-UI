@@ -4,7 +4,7 @@ import { Button, Loader } from "uiLibrary/components";
 import { Colors, TextStyles } from "uiLibrary/index";
 import { ReactComponent as ArrowUp } from "assets/svg/arrowUp.svg";
 import { ReactComponent as ArrowDown } from "assets/svg/arrowDown.svg";
-import PieChart, { getColorScale } from "components/Charts/PieChart";
+import PieChart, { ListOfColors } from "components/Charts/PieChart";
 import LineChart from "components/Charts/LineChart";
 import PieChartTable from "components/Charts/PieChartTable";
 import Usage from "./Usage";
@@ -71,7 +71,7 @@ const SmallContainerWrapper = styled.div`
     box-shadow: 0px 2px 8px 0px rgba(37, 45, 51, 0.12);
 `;
 
-const SmallContainer = styled.div`
+const SmallContainer = styled.div<{ hideLeftBorder?: boolean }>`
     display: flex;
     padding: 16px 24px;
     flex-direction: column;
@@ -79,8 +79,7 @@ const SmallContainer = styled.div`
     gap: 4px;
     flex: 1 0 0;
 
-    border-left: 1px solid ${Colors.neutral.p40};
-    border-top: 1px solid ${Colors.neutral.p40};
+    border-left: 1px solid ${({ hideLeftBorder }) => (hideLeftBorder ? Colors.white : Colors.neutral.p40)};;
     background: ${Colors.white};
 `;
 
@@ -223,8 +222,6 @@ export default () => {
                     }
                 }));
 
-                const colour = getColorScale(response.data.topRedactedSensitiveData.length);
-
                 // Dual Line data
                 setPromptsSentDaily(response.data.daily.map((dailyData, index) => {
                     return {
@@ -243,7 +240,7 @@ export default () => {
 
                 // Pie chart data
                 response.data.topRedactedSensitiveData.forEach((data, index) => {
-                    data["colour"] = colour(index + 1);
+                    data["colour"] = ListOfColors[index];
                     return data;
                 });
 
@@ -268,7 +265,7 @@ export default () => {
     return (
         <OutsideContainer>
             <SmallContainerWrapper>
-                <SmallContainer>
+                <SmallContainer hideLeftBorder>
                     <SmallContainerTitle>Active Users</SmallContainerTitle>
                     <SmallContent>
                         <SmallContentLeft>
@@ -288,8 +285,8 @@ export default () => {
                             {!isLoading && <LineChart
                                 data={activeUsersMonthly}
                                 width={160}
-                                height={140}
-                                margin={{ top: -20, right: 0, bottom: 0, left: 10 }}
+                                height={120}
+                                margin={{ top: 0, right: 0, bottom: 0, left: 10 }}
                                 showLabel={false}
                                 strokeColor={stats.bimonthly.activeUsersPercent >= 0 ? Colors.green.p70 : Colors.red.p5}
                             />}
@@ -317,8 +314,8 @@ export default () => {
                             {!isLoading && <LineChart
                                 data={promptsSentMonthly}
                                 width={160}
-                                height={140}
-                                margin={{ top: -20, right: 0, bottom: 0, left: 10 }}
+                                height={120}
+                                margin={{ top: 0, right: 0, bottom: 0, left: 10 }}
                                 showLabel={false}
                                 strokeColor={stats.bimonthly.promptSentPercent >= 0 ? Colors.green.p70 : Colors.red.p5}
                             />}
@@ -345,8 +342,8 @@ export default () => {
                             {!isLoading && <LineChart
                                 data={dataRedactionsMonthly}
                                 width={160}
-                                height={140}
-                                margin={{ top: -20, right: 0, bottom: 0, left: 10 }}
+                                height={120}
+                                margin={{ top: 0, right: 0, bottom: 0, left: 10 }}
                                 showLabel={false}
                                 strokeColor={stats.bimonthly.piiCountPercent >= 0 ? Colors.green.p70 : Colors.red.p5}
                             />}

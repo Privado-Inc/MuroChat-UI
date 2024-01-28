@@ -2,10 +2,13 @@ import React, { useEffect } from "react";
 import * as d3 from "d3";
 import { Colors } from "uiLibrary/index";
 
-export const getColorScale: any = (dataLength: number) =>
-    d3.scaleSequential()
-        .interpolator(d3.interpolateBlues)
-        .domain([0, dataLength + 1]);
+export const ListOfColors = [
+    Colors.purple.p60,
+    Colors.purple.p50,
+    Colors.purple.p40,
+    Colors.purple.p30,
+    Colors.purple.p20
+]
 
 function PieChart({
     data,
@@ -34,8 +37,6 @@ function PieChart({
 
     const width = singleWidth !== 0 ? singleWidth : 2 * outerRadius + margin.left + margin.right;
     const height = singleHeight !== 0 ? singleHeight : 250;
-    const colorScale = singleColorScale ? singleColorScale : getColorScale(data.length);
-
 
     useEffect(() => {
         drawChart();
@@ -74,7 +75,7 @@ function PieChart({
         // Append arcs
         arc.append("path")
             .attr("d", arcGenerator as any)
-            .style("fill", (_, i) => { return colorScale(i + 1) })
+            .style("fill", (_, i) => { return ListOfColors[i] })
             .style("stroke", Colors.darkRed)
             .style("stroke-width", 0);
 
@@ -83,7 +84,7 @@ function PieChart({
             .attr("text-anchor", "middle")
             .attr("alignment-baseline", "middle")
             .text((d: any) => d.data.label)
-            .style("fill", (_, i) => colorScale(data.length - i))
+            .style("fill", (_, i) => "black")
             .attr("transform", (d: any) => {
                 const [x, y] = arcGenerator.centroid(d);
                 return `translate(${x}, ${y})`;
