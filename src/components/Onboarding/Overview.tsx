@@ -20,7 +20,8 @@ const OutsideContainer = styled.div`
     gap: 32px;
     flex: 1 0 0;
     align-self: stretch;
-    height: 536px;
+    height: 100%;
+    overflow-y: scroll;
 `;
 
 const Count = styled.div`
@@ -39,26 +40,26 @@ const Compare = styled.div`
 `;
 
 const PercentCompareUp = styled.div<{ isUp?: boolean }>`
-    color: ${({ isUp }) => (isUp ? Colors.green.p70 : Colors.red.p5)};
 
     color: ${Colors.green.p70};
     text-align: center;
     font-feature-settings: 'salt' on;
     ${TextStyles.HeadlineH500Big}
+    color: ${({ isUp }) => (isUp ? Colors.green.p70 : Colors.red.p5)};
 `;
 
 const PercentCompareDown = styled.div`
-    color: ${Colors.red.p5};
     text-align: center;
     font-feature-settings: 'salt' on;
 
     ${TextStyles.HeadlineH500Big}
+    color: ${Colors.red.p5};
 `;
 
 const Compare2 = styled.div`
-    color: ${Colors.neutral.p75};
     font-feature-settings: 'salt' on;
     ${TextStyles.TextT100SemiDark}
+    color: ${Colors.neutral.p75};
 `;
 
 const SmallContainerWrapper = styled.div`
@@ -92,9 +93,9 @@ const SmallContentLeft = styled.div``;
 const SmallContentRight = styled.div``;
 
 const SmallContainerTitle = styled.div`
-    color: ${Colors.neutral.p85};
     font-feature-settings: 'salt' on;
     ${TextStyles.HeadlineH200Semibold};
+    color: ${Colors.neutral.p85};
 `;
 
 const MediumContainerWrapper = styled.div`
@@ -135,10 +136,10 @@ const MediumContainerTitle = styled.div`
     gap: 6px;
     align-self: stretch;
 
-    color: ${Colors.neutral.p85};
     font-feature-settings: 'salt' on;
-
+    
     ${TextStyles.HeadlineH200Semibold};
+    color: ${Colors.neutral.p85};
 `;
 
 const LargeContainerWrapper = styled.div`
@@ -164,10 +165,10 @@ const LargeContainer = styled.div`
 `;
 
 const LargeContainerTitle = styled.div`
-    color: ${Colors.neutral.p100};
     font-feature-settings: 'salt' on;
-
+    
     ${TextStyles.HeadlineH200Semibold};
+    color: ${Colors.neutral.p100};
 `;
 
 

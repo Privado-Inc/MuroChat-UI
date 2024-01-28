@@ -11,28 +11,28 @@ const UsageTable = styled.table`
 `;
 
 const UserGroup = styled.div`
-    color: ${Colors.neutral.p85};
     font-feature-settings: 'salt' on;
 
     ${TextStyles.ParagraphP250};
+    color: ${Colors.neutral.p85};
     width: 555px;
     margin: 8px 0;
     text-align: left;
 `;
 const PromptsSent = styled.div`
-    color: ${Colors.purple.p50};
     text-align: right;
     font-feature-settings: 'salt' on;
 
     ${TextStyles.HeadlineH600boldLight}
+    color: ${Colors.purple.p50};
     width: 190px;
 `;
 
 const DataReactions = styled.div`
-    color: ${Colors.neutral.p85};
     text-align: right;
     font-feature-settings: 'salt' on;
     ${TextStyles.ParagraphP250};
+    color: ${Colors.neutral.p85};
     width: 190px;
 `;
 
