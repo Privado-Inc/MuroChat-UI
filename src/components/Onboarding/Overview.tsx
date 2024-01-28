@@ -247,7 +247,6 @@ export default () => {
 
                 setStats(response.data);
                 updateLoading(false);
-                console.log(response.data, { stats })
 
             } else {
                 Notification.createNotification({
