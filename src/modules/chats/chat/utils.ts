@@ -10,6 +10,7 @@ export const getMaskedHtmlMessage = (
             updatedMessage = updatedMessage.replace(new RegExp(escapeStringRegexp(item.key), "g"), noHighlight ? item.key : `<span class="redact-content" data-tooltip-id="tooltip-${item.key}"}>${item.key}</span>`)
         } else {
             updatedMessage = updatedMessage.replace(new RegExp(`<${escapeStringRegexp(item.label)}>`, "g"), item.key)
+            updatedMessage = updatedMessage.replace(new RegExp(`${escapeStringRegexp("[" + item.label + "]")}`, "g"), item.key)
         }
     })
     return updatedMessage
