@@ -92,6 +92,11 @@ const SmallContent = styled.div`
 const SmallContentLeft = styled.div``;
 const SmallContentRight = styled.div``;
 
+const SmallCircle = styled.div`
+    position: relative;
+    top: -4px;
+`;
+
 const SmallContainerTitle = styled.div`
     font-feature-settings: 'salt' on;
     ${TextStyles.HeadlineH200Semibold};
@@ -355,7 +360,20 @@ export default () => {
 
             <MediumContainerWrapper>
                 <MediumContainer>
-                    <MediumContainerTitle>Prompts Sent vs Data Redactions</MediumContainerTitle>
+                    <MediumContainerTitle>
+                        <SmallCircle>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                <circle cx="4" cy="4" r="4" fill={Colors.purple.p30} />
+                            </svg>
+                        </SmallCircle>
+                        Prompts Sent vs
+
+                        <SmallCircle>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                <circle cx="4" cy="4" r="4" fill={Colors.purple.p60} />
+                            </svg>
+                        </SmallCircle>
+                        Data Redactions</MediumContainerTitle>
                     {!isLoading && <LineChart data={promptsSentDaily} data2={dataRedactionsDaily} showLabel={true} />}
 
                 </MediumContainer>
