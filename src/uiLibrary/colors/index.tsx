@@ -15,6 +15,7 @@ const Neutral = {
 };
 
 const Green = {
+    p10: "#ECFDF3",
     p30: "#86EFAC",
     p40: "#44E494",
     p50: "#1DCA73",
@@ -40,6 +41,7 @@ const Yellow = {
 };
 
 const Red = {
+    p0: "#FEF3F2",
     p1: "#FFEBE6",
     p2: "#FFBDAD",
     p3: "#FF7452",

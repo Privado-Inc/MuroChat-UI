@@ -40,7 +40,7 @@ const Content = styled.div`
     align-items: flex-start;
     gap: 10px;
     width: 100%;
-    overflow-y: auto;
+    height: 100%;
 `;
 
 export default ({
